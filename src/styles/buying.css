@@ -1,0 +1,53 @@
+
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+}
+ul{
+    list-style: none;
+}
+.buy{
+    background-color: #00bcd4;
+    color: white;
+    padding: 20px;
+    border: 1px solid transparent;
+    border-radius: 5px ;
+    box-shadow: 12px 12px 7px rgb(138, 97, 97);
+    margin-bottom: 40px;
+    margin-top: 20px;
+   }
+   .buying{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 2vw;
+    text-transform: capitalize;
+    padding: 10px;
+}
+#number{
+    margin-left: 20px;
+    display: inline-block;
+}
+.delete{
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    width:30px;
+    border: none;
+    color: white;
+    float: right;
+    margin: 0;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+}
+.delete:hover{
+    background-color: white;
+    color:rgb(6, 82, 197);
+}
+.input-check{
+    margin-right: 10px;
+}
+.strike{
+    text-decoration: line-through; 
+}
