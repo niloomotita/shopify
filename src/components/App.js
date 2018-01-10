@@ -70,7 +70,7 @@ class App extends Component {
         </div>
         <div >
           <h3>Archived:</h3>
-          <Buying checked={true} strike= "strike" items={this.state.checkedItems} onRemove={this.removeItems} onChecked = {this.reCheckItem}/>  
+          <Buying checked={true}  items={this.state.checkedItems} onRemove={this.removeItems} onChecked = {this.reCheckItem}/>  
         </div>
        
       </div>

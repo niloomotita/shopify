@@ -19,11 +19,11 @@ function Buying(props) {
                     props.onChecked && props.onChecked(item)
                   }
                 />
-                <label htmlFor={item.id} className={props.strike}>
+                <label htmlFor={item.id} className={`${props.checked === true ? "strike" : ""}`}>
                   {item.name}
                 </label>
-                <span id="number" className={props.strike}>
-                  {item.quantity}{" "}
+                <span id="number" className={`${props.checked === true ? "strike" : ""}`}>
+                  {item.quantity}
                 </span>
                 <button
                   className="delete"
