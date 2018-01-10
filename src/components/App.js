@@ -5,26 +5,30 @@ import Buying from "./Buying";
 
 
 class App extends Component {
-  state = {
-    items: [
-      {name:'Milk',
-      quantity:'3',
-      id:'milk'},
-
-      {name:'Chocolate',
-      quantity:'2',
-      id:'chocolate'},
-
-      {name:'Green Tea',
-      quantity:'3',
-      id:'greentea'},
-
-      {name:'Cheese',
-      quantity:'13',
-      id:'cheese'},
-    ],
-    checkedItems:[],
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      items: [
+        {name:'Milk',
+        quantity:'3',
+        id:'milk'},
+  
+        {name:'Chocolate',
+        quantity:'2',
+        id:'chocolate'},
+  
+        {name:'Green Tea',
+        quantity:'3',
+        id:'greentea'},
+  
+        {name:'Cheese',
+        quantity:'13',
+        id:'cheese'},
+      ],
+      checkedItems:[],
+    };
+  }
+  
 
   addItemToList = item => {
       this.setState({
@@ -64,7 +68,7 @@ class App extends Component {
           <h3> Need to buy:</h3>
           <Buying checked={false} items={this.state.items} onRemove={this.removeItems} onChecked = {this.checkedItem}/>
         </div>
-        <div>
+        <div >
           <h3>Archived:</h3>
           <Buying checked={true} strike= "strike" items={this.state.checkedItems} onRemove={this.removeItems} onChecked = {this.reCheckItem}/>  
         </div>
