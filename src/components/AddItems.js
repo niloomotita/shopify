@@ -3,14 +3,18 @@ import "../styles/additem.css";
 import serializeForm from "form-serialize";
 
 class AddItem extends Component {
-  state = {
-    name: "",
-    quantity: ""
-  };
+    constructor(props){
+        super(props);
+        this.state = {
+            name: "",
+            quantity: ""
+          };
+    }
+  
   handleSubmit = e => {
     e.preventDefault();
     const values = serializeForm(e.target, { hash: true });
-    if (this.props.onAddItem) this.props.onAddItem(values);
+    this.props.onAddItem && this.props.onAddItem(values);
     this.setState(state => ({
       name: "",
       quantity: ""
