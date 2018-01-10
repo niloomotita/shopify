@@ -50,4 +50,5 @@ ul{
 }
 .strike{
     text-decoration: line-through; 
+    font-style: oblique;
 }
