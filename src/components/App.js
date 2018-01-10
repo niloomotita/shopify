@@ -32,7 +32,7 @@ class App extends Component {
 
   addItemToList = item => {
       this.setState({
-        items: this.state.items.concat([ item ])
+        items: this.state.items.concat( item )
       })
   }
  

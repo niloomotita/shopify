@@ -15,8 +15,7 @@ function Buying(props) {
                   id={item.id}
                   name={item.id}
                   className="input-check"
-                  onChange={() =>
-                    props.onChecked && props.onChecked(item)
+                  onChange={() => props.onChecked && props.onChecked(item)
                   }
                 />
                 <label htmlFor={item.id} className={`${props.checked === true ? "strike" : ""}`}>
