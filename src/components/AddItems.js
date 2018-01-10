@@ -7,18 +7,21 @@ class AddItem extends Component {
         super(props);
         this.state = {
             name: "",
-            quantity: ""
+            quantity: "",
           };
     }
   
   handleSubmit = e => {
     e.preventDefault();
     const values = serializeForm(e.target, { hash: true });
-    this.props.onAddItem && this.props.onAddItem(values);
-    this.setState(state => ({
-      name: "",
-      quantity: ""
-    }));
+    if(this.state.name === ""){
+        return;
+    }
+        this.props.onAddItem && this.props.onAddItem(values);
+        this.setState(state => ({
+        name: "",
+        quantity: "",
+        }));
   };
   updateName = name => {
     this.setState({ name: name.trim() });
@@ -37,7 +40,7 @@ class AddItem extends Component {
           name="name"
           placeholder="want to buy ..."
           className="new-item"
-          id="input-item"
+          id={this.state.name}
           onChange={event => this.updateName(event.target.value)}
         />
         <input

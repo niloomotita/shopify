@@ -38,22 +38,22 @@ class App extends Component {
  
   removeItems = item => {
     this.setState({
-      items: this.state.items.filter(t => t.id !== item.id),
-      checkedItems:this.state.checkedItems.filter(t=>t.id !== item.id)
+      items: this.state.items.filter(t => t.name !== item.name),
+      checkedItems:this.state.checkedItems.filter(t=>t.name !== item.name)
     });
   };
 
   checkedItem = item =>{
     this.setState({
-      checkedItems:this.state.checkedItems.concat(this.state.items.filter(t=>t.id=== item.id)),
-      items:this.state.items.filter(t=>t.id !== item.id)
+      checkedItems:this.state.checkedItems.concat(this.state.items.filter(t=>t.name=== item.name)),
+      items:this.state.items.filter(t=>t.name !== item.name)
     });
   };
 
   reCheckItem = item =>{
     this.setState({
-      items:this.state.items.concat(this.state.checkedItems.filter(t=>t.id=== item.id)),
-      checkedItems:this.state.checkedItems.filter(t=>t.id !== item.id)
+      items:this.state.items.concat(this.state.checkedItems.filter(t=>t.name=== item.name)),
+      checkedItems:this.state.checkedItems.filter(t=>t.name !== item.name)
     });
   };
   render() {
