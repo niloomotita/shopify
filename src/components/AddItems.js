@@ -6,18 +6,19 @@ class AddItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      quantity: ""
+    	name: "",
+		quantity: "",
     };
   }
 
   handleSubmit = e => {
     e.preventDefault();
-    const values = serializeForm(e.target, { hash: true });
+	const values = serializeForm(e.target, { hash: true });
+	values.id = Date.now()
     if (this.state.name === "") {
       return;
     }
-    this.props.onAddItem && this.props.onAddItem(values);
+	this.props.onAddItem && this.props.onAddItem(values);
     this.setState({
       name: "",
       quantity: ""
