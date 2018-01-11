@@ -53,3 +53,7 @@ ul{
     text-decoration: line-through; 
     font-style: oblique;
 }
+h3{
+    text-align:left;
+    font-weight:bold; 
+  }

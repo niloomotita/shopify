@@ -3,29 +3,31 @@ import "../styles/additem.css";
 import serializeForm from "form-serialize";
 
 class AddItem extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            name: "",
-            quantity: "",
-          };
-    }
-  
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      quantity: ""
+    };
+  }
+
   handleSubmit = e => {
     e.preventDefault();
     const values = serializeForm(e.target, { hash: true });
-    if(this.state.name === ""){
-        return;
+    if (this.state.name === "") {
+      return;
     }
-        this.props.onAddItem && this.props.onAddItem(values);
-        this.setState(state => ({
-        name: "",
-        quantity: "",
-        }));
+    this.props.onAddItem && this.props.onAddItem(values);
+    this.setState({
+      name: "",
+      quantity: ""
+    });
   };
+
   updateName = name => {
     this.setState({ name: name.trim() });
   };
+
   updateNum = quantity => {
     this.setState({ quantity: quantity.trim() });
   };

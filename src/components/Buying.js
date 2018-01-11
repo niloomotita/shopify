@@ -5,6 +5,7 @@ function Buying(props) {
   return (
     <div className="container">
       <ul className="buy">
+        <h3>{props.titre}</h3>
         {props.items &&
           props.items.map((item, i) => {
             return (
@@ -15,19 +16,21 @@ function Buying(props) {
                   id={item.id}
                   name={item.id}
                   className="input-check"
-                  onChange={() => props.onChecked && props.onChecked(item)
-                  }
+                  onChange={() => props.onChecked && props.onChecked(item)}
                 />
-                <label htmlFor={item.id} className={`${props.checked === true ? "strike" : ""}`}>
+                <label
+                  htmlFor={item.id}
+                  className={`${props.checked === true ? "strike" : ""}`}
+                >
                   {item.name}
                 </label>
-                <span id="number" className={`${props.checked === true ? "strike" : ""}`}>
+                <span
+                  id="number"
+                  className={`${props.checked === true ? "strike" : ""}`}
+                >
                   {item.quantity}
                 </span>
-                <button
-                  className="delete"
-                  onClick={() => props.onRemove(item)}
-                >
+                <button className="delete" onClick={() => props.onRemove(item)}>
                   X
                 </button>
               </li>
@@ -37,6 +40,5 @@ function Buying(props) {
     </div>
   );
 }
-
 
 export default Buying;
