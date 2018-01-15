@@ -1,7 +1,9 @@
 import React from "react";
 import "../styles/buying.css";
+import sortBy from 'sort-by';
 
 function Buying(props) {
+	props.items.sort(sortBy('name'))	
   return (
     <div className="container">
       <ul className="buy">

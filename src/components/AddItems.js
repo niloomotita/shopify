@@ -14,7 +14,7 @@ class AddItem extends Component {
   handleSubmit = e => {
     e.preventDefault();
 	const values = serializeForm(e.target, { hash: true });
-	values.id = Date.now()
+	values.id = Date.now();
     if (this.state.name === "") {
       return;
     }
@@ -34,21 +34,22 @@ class AddItem extends Component {
   };
 
   render() {
+	  const {name, quantity} = this.state
     return (
       <form className="form" onSubmit={this.handleSubmit}>
         <h3>Make your shoppinglist</h3>
         <input
           type="text"
-          value={this.state.name}
+          value={name}
           name="name"
           placeholder="want to buy ..."
           className="new-item"
-          id={this.state.name}
+          id={name}
           onChange={event => this.updateName(event.target.value)}
         />
         <input
           type="text"
-          value={this.state.quantity}
+          value={quantity}
           name="quantity"
           placeholder="quantity"
           className="quantity"
