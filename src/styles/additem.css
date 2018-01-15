@@ -32,3 +32,9 @@
     padding: 10px;
 
 }
+@media screen and (min-device-width:320px)and (max-device-width:480px){
+    .form{
+        width: 100%;
+        margin: 10px;
+    }
+}
