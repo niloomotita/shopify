@@ -6,19 +6,19 @@ class AddItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    	name: "",
-		quantity: "",
+      name: "",
+      quantity: ""
     };
   }
 
   handleSubmit = e => {
     e.preventDefault();
-	const values = serializeForm(e.target, { hash: true });
-	values.id = Date.now();
+    const values = serializeForm(e.target, { hash: true });
+    values.id = Date.now();
     if (this.state.name === "") {
       return;
     }
-	this.props.onAddItem && this.props.onAddItem(values);
+    this.props.onAddItem && this.props.onAddItem(values);
     this.setState({
       name: "",
       quantity: ""
@@ -34,7 +34,7 @@ class AddItem extends Component {
   };
 
   render() {
-	  const {name, quantity} = this.state
+    const { name, quantity } = this.state;
     return (
       <form className="form" onSubmit={this.handleSubmit}>
         <h3>Make your shoppinglist</h3>
